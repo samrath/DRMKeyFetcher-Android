@@ -1,0 +1,38 @@
+<VAST version="3.0">
+    <Ad id="1">
+        <InLine>
+            <AdSystem>Sample Ad Server</AdSystem>
+            <AdTitle>Sample IMA Ad with Companion Ad Failure</AdTitle>
+            <Impression>
+                <![CDATA[https://example.com/impression_tracker]]>
+            </Impression>
+            <Creatives>
+                <!-- Main audio Ad -->
+                <Creative id="1">
+                    <Linear>
+                        <Duration>00:00:30</Duration>
+                        <MediaFiles>
+                            <MediaFile type="audio/mpeg" width="640" height="360">
+                                <![CDATA[http://s.saavn.com/ads/upload/mika_singapore_1.mp3]]>
+                            </MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+
+                <!-- Companion Ad (Intentionally failing) -->
+                <Creative id="2">
+                    <CompanionAds>
+                        <Companion width="300" height="250">
+                            <StaticResource creativeType="image/jpeg">
+                                <![CDATA[https://www.jiosaacn.com/nonexistent_companion.jpg]]>
+                            </StaticResource>
+                            <CompanionClickThrough>
+                                <![CDATA[https://example.com/click_through_url]]>
+                            </CompanionClickThrough>
+                        </Companion>
+                    </CompanionAds>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>
